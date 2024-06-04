@@ -27224,6 +27224,16 @@
       "component": {
         "type": "other",
         "other": {
+          "name": "rust-coreutils",
+          "version": "0.0.26",
+          "downloadUrl": "https://github.com/uutils/coreutils/releases/download/0.0.26/coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.g"
+        }
+      }
+    },
+    {
+      "component": {
+        "type": "other",
+        "other": {
           "name": "rust-cbindgen",
           "version": "0.24.3",
           "downloadUrl": "https://github.com/mozilla/cbindgen/archive/refs/tags/v0.24.3.tar.gz"
