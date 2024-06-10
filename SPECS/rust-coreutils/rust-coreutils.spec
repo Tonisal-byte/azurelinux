@@ -8,23 +8,38 @@ License:        MIT
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
 URL:            https://github.com/uutils/coreutils
-Source0:        https://github.com/uutils/coreutils/releases/download/0.0.26/coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz
+Source0:        coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz
+Source1:        https://github.com/uutils/coreutils/releases/download/0.0.26/coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz
+
+BuildRequires:  cargo
+BuildRequires:  gcc
+BuildRequires:  glibc
+# Requires:       clap
+# Requires:       clap_complete
+# Requires:       clap_mangen
+# Requires:       once_cell
+# Requires:       phf
+# Requires:       textwrap
+# Requires:       uucore
+
 
 
 %description
 This package provides the reimplementation of the GNU core utilities in Rust.
 
 %prep
-# %autosetup -n coreutils-0.0.26-x86_64-unknown-linux-gnu
+%setup -q -n coreutils
+tar -xzf %{SOURCE0}
 
 %build
-# cargo build --release
+cargo build --release --offline
+
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
-tar -xzf %{SOURCE0} -C %{buildroot}%{_bindir} --strip-components=1
-rm -f %{buildroot}%{_bindir}/LICENSE %{buildroot}%{_bindir}/README.md
+cp target/release/coreutils %{buildroot}%{_bindir}
+
 
 
 utilities=(
@@ -41,11 +56,14 @@ utilities=(
 )
 
 
+#mkdir -p %{buildroot}%{_prefix}/local/bin
 pushd %{buildroot}%{_bindir}
 for util in "${utilities[@]}"; do 
-    # ln -sf coreutils  ${util}
     touch $util
-    echo -e "#!/bin/sh\n%{buildroot}%{_bindir}/coreutils $util \"\$@\"" > %{buildroot}%{_bindir}/$util; 
+    ln -sf coreutils ${util}
+    #touch $util
+    #echo -e "#!/bin/sh\n/usr/bin/coreutils $util \"\$@\"" > $util; 
+    #chmod +x $util; 
 done
 popd
 

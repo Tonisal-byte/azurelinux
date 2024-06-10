@@ -1,0 +1,20 @@
+{
+    "Disks": [
+        {
+            "Artifacts": [
+                {
+                    "Name": "poseidon-core",
+                    "Compression": "tar.gz"
+                }
+            ]
+        }
+    ],
+    "SystemConfigs": [
+        {
+            "Name": "Standard",
+            "PackageLists": [
+                "packagelists/rust-core-packages-container.json"
+            ]
+        }
+    ]
+}

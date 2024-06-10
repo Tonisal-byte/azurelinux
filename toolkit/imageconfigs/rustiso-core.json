@@ -1,0 +1,13 @@
+{
+    "SystemConfigs": [
+        {
+            "Name": "rustiso-core",
+            "PackageLists": [
+                "packagelists/rust-core-packages-container.json"
+            ],
+            "KernelOptions": {
+                "default": "kernel"
+            }
+        }
+    ]
+}

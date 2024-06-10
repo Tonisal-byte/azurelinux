@@ -1,0 +1,6 @@
+{
+    "packages": [
+        "mariner-release",
+        "rust-coreutils"
+    ]
+}
