@@ -61,9 +61,6 @@ pushd %{buildroot}%{_bindir}
 for util in "${utilities[@]}"; do 
     touch $util
     ln -sf coreutils ${util}
-    #touch $util
-    #echo -e "#!/bin/sh\n/usr/bin/coreutils $util \"\$@\"" > $util; 
-    #chmod +x $util; 
 done
 popd
 
