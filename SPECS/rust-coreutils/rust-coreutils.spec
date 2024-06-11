@@ -14,15 +14,6 @@ Source1:        https://github.com/uutils/coreutils/releases/download/0.0.26/cor
 BuildRequires:  cargo
 BuildRequires:  gcc
 BuildRequires:  glibc
-# Requires:       clap
-# Requires:       clap_complete
-# Requires:       clap_mangen
-# Requires:       once_cell
-# Requires:       phf
-# Requires:       textwrap
-# Requires:       uucore
-
-
 
 %description
 This package provides the reimplementation of the GNU core utilities in Rust.
@@ -56,7 +47,6 @@ utilities=(
 )
 
 
-#mkdir -p %{buildroot}%{_prefix}/local/bin
 pushd %{buildroot}%{_bindir}
 for util in "${utilities[@]}"; do 
     touch $util
