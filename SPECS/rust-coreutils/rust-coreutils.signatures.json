@@ -1,5 +1,7 @@
 {
     "Signatures": {
-        "coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz":"554037ef8b4d33e8e4baba49096c05508628b5c3a6b8f4c7ec3d0f7394ffe609"
+        "cargo_config":"e0cda5c47b21ab5df462e603ba4ffe8a27122cbbe2b308cc5fb7e57bb5c4922b",
+        "rust-coreutils-0.0.26-cargo.tar.gz":"4624d0c70cbcfe7e24a2378c6fd9b0899e66cb9ec26d91e704defb606cf6933e",
+        "coreutils-0.0.26.tar.gz":"2a0e8511f1e6adf7f1003ce4536b8a8bb1b2289364efe55edf96f2fc9e2f00a4"
     }    
 }

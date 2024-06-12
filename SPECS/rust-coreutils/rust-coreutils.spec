@@ -8,8 +8,10 @@ License:        MIT
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
 URL:            https://github.com/uutils/coreutils
-Source0:        coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz
-Source1:        https://github.com/uutils/coreutils/releases/download/0.0.26/coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz
+# Below is a manually created tarball with no download link.
+Source0:        rust-coreutils-0.0.26-cargo.tar.gz
+Source1:        cargo_config
+Source2:        %{url}/archive/refs/tags/v%{version}.tar.gz#/coreutils-%{version}.tar.gz
 
 BuildRequires:  cargo
 BuildRequires:  gcc
@@ -19,11 +21,14 @@ BuildRequires:  glibc
 This package provides the reimplementation of the GNU core utilities in Rust.
 
 %prep
-%setup -q -n coreutils
+%setup -q -n rust-coreutils
+ls
 tar -xzf %{SOURCE0}
+ls
+install -D %{SOURCE1} .cargo/config
 
 %build
-cargo build --release --offline
+cargo build --release
 
 
 %install
@@ -49,7 +54,6 @@ utilities=(
 
 pushd %{buildroot}%{_bindir}
 for util in "${utilities[@]}"; do 
-    touch $util
     ln -sf coreutils ${util}
 done
 popd
