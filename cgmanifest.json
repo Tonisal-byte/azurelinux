@@ -27226,7 +27226,17 @@
         "other": {
           "name": "rust-coreutils",
           "version": "0.0.26",
-          "downloadUrl": "https://github.com/uutils/coreutils/releases/download/0.0.26/coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.g"
+          "downloadUrl": "https://github.com/uutils/coreutils/releases/download/0.0.26/coreutils-0.0.26-x86_64-unknown-linux-gnu.tar.gz"
+        }
+      }
+    },
+    {
+      "component": {
+        "type": "other",
+        "other": {
+          "name": "rust-sudo",
+          "version": "0.2.2",
+          "downloadUrl": "https://github.com/memorysafety/sudo-rs/archive/refs/tags/v0.2.2.tar.gz"
         }
       }
     },

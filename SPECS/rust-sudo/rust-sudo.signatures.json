@@ -1,5 +1,7 @@
 {
     "Signatures": {
-        "sudo-rs-0.2.2-x86_64-linux.tar.gz":"ea61db31cbed0d45da3cf0a11a01889ecda9d1d798bc3e35b47a753fa1a4c9f3"
+        "rust-sudo-0.2.2-cargo.tar.gz":"943d67165c307c9ccf97a5ab1c54164c10fb1f7c5e49c9f3756ae1ab3305c871",
+        "sudo-rs-0.2.2.tar.gz":"d4ce461f8206b36035a82197a477657afeb8a795b3378e604fe921e03c38ec5d",
+        "cargo_config":"5c3db92899a9557e5cd299969635a92f2e6bf4075c82f01366e6b533128f18ac"
     }    
 }

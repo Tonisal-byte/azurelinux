@@ -596,6 +596,7 @@ func TdnfInstallWithProgress(packageName, installRoot string, currentPackagesIns
 		}
 
 		line := args[0].(string)
+		logger.Log.Debug(line)
 		if !strings.HasPrefix(line, tdnfInstallPrefix) {
 			return
 		}
