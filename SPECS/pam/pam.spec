@@ -11,7 +11,8 @@ Distribution:   Mariner
 BuildRequires:  cracklib-devel
 BuildRequires:  libselinux-devel
 BuildRequires:  audit-devel
-Requires:       audit-libs
+# Requires:       audit-libs
+# Requires:       brush-shell
 Recommends:     cracklib-dicts
 
 Patch0:         CVE-2024-22365.patch

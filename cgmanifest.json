@@ -1296,6 +1296,16 @@
       "component": {
         "type": "other",
         "other": {
+          "name": "brush-shell",
+          "version": "0.1.0",
+          "downloadUrl": "https://github.com/reubeno/brush/archive/refs/tags/brush-shell-v0.1.0.tar.gz"
+        }
+      }
+    },
+    {
+      "component": {
+        "type": "other",
+        "other": {
           "name": "bsf",
           "version": "2.4.0",
           "downloadUrl": "https://downloads.apache.org/commons/bsf/source/bsf-src-2.4.0.tar.gz"

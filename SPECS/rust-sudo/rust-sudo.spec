@@ -43,15 +43,17 @@ cargo build --release --offline
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
-cp target/release/sudo %{buildroot}%{_bindir}
-cp target/release/su %{buildroot}%{_bindir}
-chown root:root %{buildroot}%{_bindir}/sudo
-chown root:root %{buildroot}%{_bindir}/su
+mkdir -p %{buildroot}
+cargo install --path . --root %{buildroot}/usr
+pushd %{buildroot}/usr 
+rm .crates.toml
+rm .crates2.json
+popd
 
 %files
 /usr/bin/sudo
 /usr/bin/su
+/usr/bin/visudo
 
 %changelog 
 * Wed June 12 2024 Antonio Salinas ansalinas@microsoft.com - 0.2.2

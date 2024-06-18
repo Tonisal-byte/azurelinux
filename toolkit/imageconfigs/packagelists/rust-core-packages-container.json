@@ -1,6 +1,7 @@
 {
     "packages": [
         "mariner-release",
+        "brush-shell",
         "rust-coreutils",
         "rust-sudo"
     ]
