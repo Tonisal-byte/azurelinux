@@ -105,10 +105,19 @@ cd $PKG_NAME
 
 #TODO: installing rust as auto-patcher does not have it installed by default. Possibly remove if auto-patcher will be changed to have rust included.
 sudo tdnf install -y rust
+mkdir -p .cargo
+cargo vendor 
 
-cargo vendor > config.toml
-cd ..
-ls
+echo "
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+
+" >> .cargo/config.toml
+
 echo ""
 echo "========================="
 echo "Tar vendored tarball"

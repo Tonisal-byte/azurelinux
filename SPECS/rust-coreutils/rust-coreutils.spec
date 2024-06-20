@@ -16,6 +16,7 @@ Source2:        %{url}/archive/refs/tags/v%{version}.tar.gz#/coreutils-%{version
 BuildRequires:  cargo
 BuildRequires:  gcc
 BuildRequires:  glibc
+Conflicts:      coreutils
 
 %description
 This package provides the reimplementation of the GNU core utilities in Rust.

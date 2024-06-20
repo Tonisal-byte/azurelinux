@@ -17,18 +17,9 @@ BuildRequires:  cargo
 BuildRequires:  gcc
 BuildRequires:  glibc
 BuildRequires:  pam-devel
+Requires:       brush-shell
 
-#Requires:       audit-libs
-#Requires:       bash
-#Requires:       cracklib
-#Requires:       cracklib-dicts
-#Requires:       glibc
-#Requires:       libcap-ng
-#Requires:       openldap
-#Requires:       openssl-libs   
-#Requires:       pam
-#Requires:       shadow-utils 
-#Requires:       zlib
+
 
 %description
 This package provides the reimplementation of sudo and su.

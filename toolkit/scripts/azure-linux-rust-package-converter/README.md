@@ -2,7 +2,7 @@
 
  - **Goals:**
     - Create a tool to aid in the conversion of open source rust packages to SPEC files + resources(i.e. source code) 
-    - Minimize the time it takes for an engineer to implement rust package in Azure Linux (Build Tools)
+    - Minimize the time it takes for an engineer to implement rust packages in Azure Linux (using Build Tools)
 
 - **Workflow**
     - User will create a new template directory via the **--create-spec** command which will take two arguments 1.(package name) 2.(source tarball directory ***abs path***). This command will populate a new directory under the build directory where the user will find the template spec file (now named after the package) to fill out. Additionally, there will be a script to generate a vendored source tarball and the original source tarball included in the new directory. In this build directory there can exsist various rust packages in different stages of conversion from pre-compiled to actively maintained and updated. 

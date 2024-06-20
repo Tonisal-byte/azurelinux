@@ -8,8 +8,7 @@ Distribution:   Mariner
 URL:            # FILL IN URL
 # Below is a automatically created tarball with no download link.
 Source0:        # DO NOT FILL IN
-Source1:        cargo_config
-Source2:        # DO NOT FILL IN
+Source1:        # DO NOT FILL IN
 
 # Required build packages
 BuildRequires:  cargo
@@ -24,7 +23,6 @@ BuildRequires:  glibc
 %prep
 %setup -q -n %{name}
 tar -xzf %{SOURCE0}
-install -D %{SOURCE1} .cargo/config
 
 %build
 cargo build --release --offline

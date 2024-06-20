@@ -1,3 +1,4 @@
+#!/bin/bash
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
@@ -93,11 +94,11 @@ cp $SRC_TARBALL $tmpdir
 pushd $tmpdir > /dev/null
 
 NAME_VER="$PKG_NAME-$PKG_VERSION"
-VENDOR_TARBALL="$OUT_FOLDER/$NAME_VER-cargo.tar.gz"
+VENDOR_TARBALL="$OUT_FOLDER/$NAME_VER-vendored.tar.gz"
 
 echo "Unpacking source tarball..."
 mkdir $PKG_NAME
-tar -xf $SRC_TARBALL -C $PKG_NAME --strip-components=1
+tar -xzf $SRC_TARBALL -C $PKG_NAME --strip-components=1
 
 
 echo "Vendor cargo ..."
@@ -107,14 +108,14 @@ cd $PKG_NAME
 sudo tdnf install -y rust
 mkdir -p .cargo
 cargo vendor 
-
+ls
 echo "
 
 [source.crates-io]
-replace-with = "vendored-sources"
+replace-with = \"vendored-sources\"
 
 [source.vendored-sources]
-directory = "vendor"
+directory = \"vendor\"
 
 " >> .cargo/config.toml
 
@@ -125,7 +126,7 @@ tar  --sort=name \
      --mtime="2021-04-26 00:00Z" \
      --owner=0 --group=0 --numeric-owner \
      --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-     -czf "$VENDOR_TARBALL" $PKG_NAME
+     -czf "$VENDOR_TARBALL" .
 
 popd > /dev/null
 echo "$PKG_NAME vendored modules are available at $VENDOR_TARBALL and static assets in $STATIC_ASSETS_TARBALL"
