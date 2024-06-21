@@ -3,6 +3,7 @@
         "mariner-release",
         "brush-shell",
         "rust-coreutils",
+        "rust-diffutils",
         "rust-sudo"
     ]
 }

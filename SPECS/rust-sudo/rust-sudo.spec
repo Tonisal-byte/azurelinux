@@ -9,9 +9,8 @@ Vendor:         Microsoft Corporation
 Distribution:   Mariner
 URL:            https://github.com/memorysafety/sudo-rs
 # Below is a manually created tarball with no download link.
-Source0:        rust-sudo-0.2.2-cargo.tar.gz
-Source1:        cargo_config
-Source2:        %{url}/archive/refs/tags/v%{version}.tar.gz#/sudo-rs-%{version}.tar.gz
+Source0:        rust-sudo-0.2.2-vendored.tar.gz
+Source1:        %{url}/archive/refs/tags/v%{version}.tar.gz#/sudo-rs-%{version}.tar.gz
 
 BuildRequires:  cargo
 BuildRequires:  gcc
@@ -20,14 +19,12 @@ BuildRequires:  pam-devel
 Requires:       brush-shell
 
 
-
 %description
 This package provides the reimplementation of sudo and su.
 
 %prep
-%setup -q -n rust-sudo
+%setup -q -n %{name}
 tar -xzf %{SOURCE0}
-install -D %{SOURCE1} .cargo/config
 
 %build
 cargo build --release --offline

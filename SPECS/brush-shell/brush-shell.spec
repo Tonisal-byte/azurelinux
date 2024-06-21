@@ -3,7 +3,7 @@
 Summary:        Rust shell implementation
 Name:           brush-shell
 Version:        0.2.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 License:        MIT
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
@@ -16,6 +16,7 @@ BuildRequires:  rust
 BuildRequires:  gcc
 BuildRequires:  glibc
 Provides:       /bin/sh
+Provides:        /bin/bash
 Conflicts:      bash
 
 %description
@@ -36,8 +37,8 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}/bin
 cargo install --path ./brush-shell --root %{buildroot}/usr
-ln -sf /bin/brush %{buildroot}/bin/sh
-ln -sf /bin/brush %{buildroot}/bin/bash
+ln -sf brush %{buildroot}/bin/sh
+ln -sf brush %{buildroot}/bin/bash
 
 pushd %{buildroot}/usr 
 rm .crates.toml

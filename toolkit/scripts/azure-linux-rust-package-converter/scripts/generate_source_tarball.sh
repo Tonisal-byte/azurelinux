@@ -108,7 +108,6 @@ cd $PKG_NAME
 sudo tdnf install -y rust
 mkdir -p .cargo
 cargo vendor 
-ls
 echo "
 
 [source.crates-io]
@@ -118,7 +117,7 @@ replace-with = \"vendored-sources\"
 directory = \"vendor\"
 
 " >> .cargo/config.toml
-
+cd ..
 echo ""
 echo "========================="
 echo "Tar vendored tarball"
@@ -126,7 +125,7 @@ tar  --sort=name \
      --mtime="2021-04-26 00:00Z" \
      --owner=0 --group=0 --numeric-owner \
      --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-     -czf "$VENDOR_TARBALL" .
+     -czf "$VENDOR_TARBALL" $PKG_NAME
 
 popd > /dev/null
 echo "$PKG_NAME vendored modules are available at $VENDOR_TARBALL and static assets in $STATIC_ASSETS_TARBALL"
