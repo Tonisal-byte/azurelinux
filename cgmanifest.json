@@ -27264,6 +27264,16 @@
       "component": {
         "type": "other",
         "other": {
+          "name": "rust-tls",
+          "version": "0.23.10",
+          "downloadUrl": "https://github.com/rustls/rustls/archive/refs/tags/v/0.23.10.tar.gz"
+        }
+      }
+    },
+    {
+      "component": {
+        "type": "other",
+        "other": {
           "name": "rust-cbindgen",
           "version": "0.24.3",
           "downloadUrl": "https://github.com/mozilla/cbindgen/archive/refs/tags/v0.24.3.tar.gz"
