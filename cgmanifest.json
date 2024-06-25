@@ -27274,6 +27274,16 @@
       "component": {
         "type": "other",
         "other": {
+          "name": "rustls-ffi",
+          "version": "0.13.10",
+          "downloadUrl": "https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.13.0.tar.gz"
+        }
+      }
+    },
+    {
+      "component": {
+        "type": "other",
+        "other": {
           "name": "rust-cbindgen",
           "version": "0.24.3",
           "downloadUrl": "https://github.com/mozilla/cbindgen/archive/refs/tags/v0.24.3.tar.gz"

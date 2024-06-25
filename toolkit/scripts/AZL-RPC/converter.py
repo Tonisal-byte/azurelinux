@@ -7,6 +7,8 @@ import json
 
 def create_spec_file(spec_name:str, tarball_path:str):
     # Creates a new package directory, spec file, and copies source tarball
+    if not os.path.exists(os.path.join(os.getcwd(),"build")):
+        os.mkdir(os.path.join(os.getcwd(),"build"))
 
     print("Creating new package directory...")
     build_dir = os.path.join(os.getcwd(),"build", spec_name)
