@@ -1,0 +1,13 @@
+{
+  "type": "container-python",
+  "format": "container",
+  "tag": "container-python-2026111801",
+  "date": "2026-11-19",
+  "changes": [
+    {
+      "type": "Upgrade",
+      "description": "ca-certificates from 2026.2.92_v9.0.319-2.azl4 to 2026.2.92_v9.0.319-4.azl4 [Source PR #20319](https://github.com/microsoft/azurelinux/pull/20319)",
+      "cves": []
+    }
+  ]
+}
